@@ -1,18 +1,15 @@
 
-import { MDBFooter, MDBIcon } from "mdb-react-ui-kit"
-
+import { Container } from "react-bootstrap"
 const MyFooter = () =>{
 
 return(
-    <MDBFooter>
-        <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom fixed-bottom'>
-        <div className='me-5'>
+        <Container fluid>
+        <div>
           <span>EpiBooks Connect!</span>
           <br />
           <span>links here</span>
         </div>
-      </section>
-    </MDBFooter>
+      </Container>
 
 )
 
