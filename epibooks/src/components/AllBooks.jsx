@@ -7,7 +7,7 @@ class Allbooks extends Component{
     render(){
         return(
             <Container fluid>
-                <Row>
+                <Row className="d-flex justify-content-center">
                     {bookLibrary.map((book) =>{
                         return(
                             <Col xs={12} sm={6}  md={4} lg={3} xl={2} key={book.asin} className="mb-3 d-flex flex-nowrap">
