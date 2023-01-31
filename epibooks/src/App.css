@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.card-area {
+  width: 300px;
+}
+
+.image-area {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+  object-position: top;
+}

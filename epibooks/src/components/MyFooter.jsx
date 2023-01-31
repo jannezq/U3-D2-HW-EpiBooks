@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap"
 const MyFooter = () =>{
 
 return(
-        <Container fluid>
+        <Container fluid className="fixed-bottom my-3 text-center">
         <div>
           <span>EpiBooks Connect!</span>
           <br />
