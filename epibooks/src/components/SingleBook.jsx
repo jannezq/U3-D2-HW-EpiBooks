@@ -8,10 +8,15 @@ class SingleBook extends Component{
     }
 render() {
     return(
-        <Card className="h-100 card-area" onClick={() => {
-            this.setState({ selectedBook: true})
-            console.log('Clicked!', this.props.title)
-            
+        <Card className="h-100 card-area"  onClick={() => {
+            if(this.state.selectedBook === false){
+                 this.setState({ selectedBook: true})
+                 console.log('Clicked!', this.props.title)
+            } else{
+                this.setState({ selectedBook: false})
+                console.log("You unselected the book", this.props.title)
+            }
+
         }}
 
         >

@@ -19,36 +19,39 @@ class BookList extends Component{
     render(){
         return(
         <Container fluid>
-                <Button onClick={() => {
-                    this.setState({selectedCatergory: fantasy})
+            <div className="mb-3" >
+            <Button className="mr-2" onClick={() => {
+                    this.setState({selectedCategory: fantasy})
                 }}
                 >
                     Fantasy
                 </Button>
-                <Button onClick= {()=>{
-                    this.setState({selectedCatergory: history})
+                <Button className="mr-2"  onClick= {()=>{
+                    this.setState({selectedCategory: history})
                 }}
                 >
                     History
                 </Button>
-                <Button onClick= {()=>{
-                    this.setState({selectedCatergory: horror})
+                <Button className="mr-2"  onClick= {()=>{
+                    this.setState({selectedCategory: horror})
                 }}
                 >
                     Horror
                 </Button>
-                <Button onClick= {()=>{
-                    this.setState({selectedCatergory: scifi})
+                <Button className="mr-2"  onClick= {()=>{
+                    this.setState({selectedCategory: scifi})
                 }}
                 >
                     Sci-fi
                 </Button>
-                <Button onClick= {()=>{
-                    this.setState({selectedCatergory: romance})
+                <Button className="mr-2"  onClick= {()=>{
+                    this.setState({selectedCategory: romance})
                 }}
                 >
                     Romance
                 </Button>
+            </div>
+                
                 <Row className="d-flex justify-content-center">
                     {this.state.selectedCategory.map((currentBook) => {
                         return(
