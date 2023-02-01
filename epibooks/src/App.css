@@ -43,7 +43,7 @@
 }
 
 .card-area.selected {
-  border: 4px solid red;
+  border: 5px solid rgb(255, 0, 0);
 }
 
 .image-area {

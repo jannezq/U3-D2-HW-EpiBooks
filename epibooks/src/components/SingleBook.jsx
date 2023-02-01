@@ -9,13 +9,13 @@ class SingleBook extends Component{
     }
 render() {
     return(
-        <Card className={ this.state.selectedBook ? "h-100 selected card-area" : "card-area" }   onClick={() => {
+        <Card className={ this.state.selectedBook ? "selected card-area" : "card-area" }   onClick={() => {
             if(this.state.selectedBook === false){
                  this.setState({ selectedBook: true})
-                 console.log('Clicked!', this.props.title)
+                //  console.log('Clicked!', this.props.title)
             } else{
                 this.setState({ selectedBook: false})
-                console.log("You unselected the book", this.props.title)
+                // console.log("You unselected the book", this.props.title)
             }
 
         }}

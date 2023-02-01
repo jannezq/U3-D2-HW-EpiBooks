@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import SingleBook from "./SingleBook";
 import fantasy from "../data/fantasy.json"
 import horror from "../data/horror.json"
@@ -11,9 +11,8 @@ import history from "../data/history.json"
 class BookList extends Component{
 
     state ={
-
         selectedCategory: fantasy,
-
+        search: ""
     };
 
     render(){
@@ -51,13 +50,24 @@ class BookList extends Component{
                     Romance
                 </Button>
             </div>
-                
+            <div className="mb-3 container">
+                <Form>
+                    <Form.Control type="text" placeholder="Search Book here!" value={this.state.search}
+                    onChange={(e) =>{
+                        this.setState({
+                            search: e.target.value
+                        })
+                    }} />
+                </Form>
+            </div>
                 <Row className="d-flex justify-content-center">
                     {this.state.selectedCategory.map((currentBook) => {
                         return(
+                            currentBook.title.toLowerCase().includes(this.state.search) && (
                         <Col key={currentBook.asin} xs={12} sm={6}  md={4} lg={3} xl={2}  className="mb-3 d-flex flex-nowrap">
-                           < SingleBook {...currentBook} />
-                        </Col>
+                            < SingleBook {...currentBook} />
+                         </Col>)
+                        
                         )
                     })}
                 </Row>
