@@ -4,14 +4,16 @@ import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import MyNav from "./components/MyNav";
 import MyFooter from "./components/MyFooter";
 import WelcomeJumbotron from "./components/WelcomeJumbotron";
-import Allbooks from "./components/AllBooks";
+// import Allbooks from "./components/AllBooks";
+import BookList from "./components/BookList";
 
 function App() {
   return (
     <div className="App">
       <MyNav />
       <WelcomeJumbotron />
-      <Allbooks />
+      <BookList />
+      {/* <Allbooks /> */}
       <MyFooter />
     </div>
   );

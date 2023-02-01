@@ -11,9 +11,6 @@ return(
   <p>
     Look at the variety of books available for you!
   </p>
-  <p>
-    <Button bsStyle="primary">Click here!</Button>
-  </p>
   </div>
   
 </Jumbotron>

@@ -4,7 +4,7 @@ import { GoMarkGithub } from "react-icons/go";
 const MyFooter = () =>{
 
 return(
-        <Container fluid className="fixed-bottom mt-3 text-center footer-area py-1">
+        <Container fluid className=" mt-3 text-center footer-area py-1">
             <Row>
                 <Col className="info-area d-flex flex-column justify-content-center align-items-center">
                     <p className="mb-0">Check more here! </p>
