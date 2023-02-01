@@ -57,6 +57,7 @@ class BookList extends Component{
                         this.setState({
                             search: e.target.value
                         })
+                        console.log("searching for book that is title: ",this.state.search)
                     }} />
                 </Form>
             </div>
@@ -67,7 +68,6 @@ class BookList extends Component{
                         <Col key={currentBook.asin} xs={12} sm={6}  md={4} lg={3} xl={2}  className="mb-3 d-flex flex-nowrap">
                             < SingleBook {...currentBook} />
                          </Col>)
-                        
                         )
                     })}
                 </Row>
