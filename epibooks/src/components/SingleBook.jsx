@@ -1,5 +1,6 @@
 import { Component } from "react"
 import {  Card } from "react-bootstrap"
+import "../../src/App.css";
 
 class SingleBook extends Component{
 
@@ -8,7 +9,7 @@ class SingleBook extends Component{
     }
 render() {
     return(
-        <Card className="h-100 card-area"  onClick={() => {
+        <Card className={ this.state.selectedBook ? "h-100 selected card-area" : "card-area" }   onClick={() => {
             if(this.state.selectedBook === false){
                  this.setState({ selectedBook: true})
                  console.log('Clicked!', this.props.title)
