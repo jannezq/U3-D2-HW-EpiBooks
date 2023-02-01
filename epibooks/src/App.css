@@ -36,39 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.card-area {
-  width: 300px;
-  font-size: 20px;
-}
-
-.card-area.selected {
-  border: 5px solid rgb(255, 0, 0);
-}
-
-.image-area {
-  width: 100%;
-  height: 40vh;
-  object-fit: cover;
-  object-position: top;
-}
-
-.footer-area {
-  background-color: rgb(51, 45, 45);
-}
-
-.info-area {
-  color: white;
-}
-
-.info-area a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.welcome-area {
-  color: white;
-  text-shadow: 1px 1px 2px rgb(0, 0, 0);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}

@@ -61,7 +61,26 @@ class BookList extends Component{
                     }} />
                 </Form>
             </div>
-                <Row className="d-flex justify-content-center">
+
+                    {/* using "filter" method 
+                    ---filters through selected category of books
+                    ---it returns the title of the book that has been filtered 
+                    ---that is been inputed in the search form 
+                    ---then maps through the whole array and then returns 
+                    ---the card from singlebook*/}
+                    <Row className="d-flex justify-content-center">
+                        {this.state.selectedCategory.filter((currenBook) =>{
+                            return currenBook.title.toLowerCase().includes(this.state.search.toLowerCase())
+                        }).map((currenBook) =>{
+                            return (
+                            <Col key={currenBook.asin} xs={12} sm={6}  md={4} lg={3} xl={2}  className="mb-3 d-flex flex-nowrap">
+                                < SingleBook {...currenBook} />
+                             </Col>
+                             )
+                        }) }
+                    </Row>
+
+                {/* <Row className="d-flex justify-content-center">
                     {this.state.selectedCategory.map((currentBook) => {
                         return(
                             currentBook.title.toLowerCase().includes(this.state.search) && (
@@ -70,7 +89,7 @@ class BookList extends Component{
                          </Col>)
                         )
                     })}
-                </Row>
+                </Row> */}
             </Container>
         )
     }

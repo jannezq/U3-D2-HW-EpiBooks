@@ -1,6 +1,7 @@
 import { Component } from "react"
 import {  Card } from "react-bootstrap"
 import "../../src/App.css";
+import "./componentCSS.css"
 
 class SingleBook extends Component{
 
