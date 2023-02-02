@@ -1,10 +1,13 @@
 import { Component } from "react";
 import AddComments from "./AddComments";
 import CommentsList from "./CommentsList";
+import { Spinner, Alert } from "react-bootstrap";
 
 class CommentArea extends Component {
   state = {
     comments: [],
+    isLoading: true,
+    errorLoad: false,
   };
 
   fetchComments = async () => {
@@ -24,13 +27,21 @@ class CommentArea extends Component {
         let commentsData = await response.json();
         // console.log(commentsData);
         this.setState({
+          isLoading: false,
           comments: commentsData,
         });
       } else {
-        alert("error");
+        this.setState({
+          isLoading: false,
+          errorLoad: true,
+        });
       }
     } catch (error) {
       console.log(error);
+      this.setState({
+        isLoading: false,
+        errorLoad: true,
+      });
     }
   };
 
@@ -44,6 +55,13 @@ class CommentArea extends Component {
     return (
       <>
         <div>
+          {this.state.isLoading && (
+            <Spinner animation="border" variant="info" />
+          )}
+          {this.state.errorLoad && (
+            <Alert variant="danger">Aww snap, we got an error!😨</Alert>
+          )}
+
           <AddComments asin={this.props.idAsin} />
           <CommentsList comments={this.state.comments} />
         </div>
