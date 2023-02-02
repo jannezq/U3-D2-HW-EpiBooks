@@ -40,7 +40,11 @@ class SingleBook extends Component {
               </Card.Body>
             </Card>
           </Col>
-          <Col>{this.state.commentsOnLoad && <CommentArea />}</Col>
+          <Col>
+            {this.state.commentsOnLoad && (
+              <CommentArea idAsin={this.props.asin} />
+            )}
+          </Col>
         </Row>
       </>
     );
