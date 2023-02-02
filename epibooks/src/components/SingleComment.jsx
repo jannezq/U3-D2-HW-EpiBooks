@@ -17,7 +17,7 @@ class SingleComment extends Component {
         }
       );
       if (response.ok) {
-        console.log(response);
+        // console.log(response);
       } else {
         alert("error happening");
       }
