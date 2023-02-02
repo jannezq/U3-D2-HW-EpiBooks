@@ -1,4 +1,5 @@
 import { Component } from "react";
+import AddComments from "./AddComments";
 import CommentsList from "./CommentsList";
 
 class CommentArea extends Component {
@@ -21,7 +22,7 @@ class CommentArea extends Component {
       );
       if (response.ok) {
         let commentsData = await response.json();
-        console.log(commentsData);
+        // console.log(commentsData);
         this.setState({
           comments: commentsData,
         });
@@ -43,6 +44,7 @@ class CommentArea extends Component {
     return (
       <>
         <div>
+          <AddComments asin={this.props.idAsin} />
           <CommentsList comments={this.state.comments} />
         </div>
       </>
