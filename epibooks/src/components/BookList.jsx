@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import CommentArea from "./CommentArea";
 import SingleBook from "./SingleBook";
 import fantasy from "../data/fantasy.json";
 import horror from "../data/horror.json";
@@ -84,28 +85,35 @@ class BookList extends Component {
                     ---that is been inputed in the search form 
                     ---then maps through the whole array and then returns 
                     ---the card from singlebook*/}
-        <Row className="d-flex justify-content-center">
-          {this.state.selectedCategory
-            .filter((currenBook) => {
-              return currenBook.title
-                .toLowerCase()
-                .includes(this.state.search.toLowerCase());
-            })
-            .map((currenBook) => {
-              return (
-                <Col
-                  key={currenBook.asin}
-                  xs={12}
-                  sm={6}
-                  md={4}
-                  lg={3}
-                  xl={2}
-                  className="mb-3 d-flex flex-nowrap"
-                >
-                  <SingleBook {...currenBook} />
-                </Col>
-              );
-            })}
+        <Row>
+          <Col md={8}>
+            <Row className="d-flex justify-content-center">
+              {this.state.selectedCategory
+                .filter((currenBook) => {
+                  return currenBook.title
+                    .toLowerCase()
+                    .includes(this.state.search.toLowerCase());
+                })
+                .map((currenBook) => {
+                  return (
+                    <Col
+                      key={currenBook.asin}
+                      xs={12}
+                      md={4}
+                      xl={3}
+                      className="mb-3 d-flex flex-nowrap"
+                    >
+                      <SingleBook {...currenBook} />
+                    </Col>
+                  );
+                })}
+            </Row>
+          </Col>
+          <Col md={4}>
+            {this.state.commentsOnLoad && (
+              <CommentArea idAsin={this.props.asin} />
+            )}
+          </Col>
         </Row>
 
         {/* <Row className="d-flex justify-content-center">
